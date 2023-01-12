@@ -390,5 +390,35 @@ Employee emp = new Employee();
 * Person Constructor
 * Employee Constructor
 
+> # Single Inheritance
+
+![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/inheritance2.png "San Juan Mountains")
+
+> # Multi-level Inheritance
 
 
+![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/inheritance3.png "San Juan Mountains")
+
+> # Hierarchical Inheritance
+
+
+![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/inheritance4.png "San Juan Mountains")
+
+> # Hybrid Inheritance
+![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/inheritance5.png "San Juan Mountains")
+
+> # Multiple Inheritance
+
+> In multiple inheritance, a class inherits from multiple interfaces. Note that C# does not support deriving multiple base classes. Use interfaces for multiple inheritance.
+
+![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/inheritance6.png "San Juan Mountains")
+
+> Important Points:
+
+* In C#, three types can participate in inheritance: Class, Struct, and Interface.
+* A class can inherit a single class only. It cannot inherit from multiple classes.
+* A class cannot inherit from a struct.
+* A class can inherit (implement) one or more interfaces.
+* A Struct can inherit from one or more interfaces. However, it cannot inherit from another struct or class.
+* An interface can inherit from one or more interfaces but cannot inherit from a class or a struct.
+* Constructors or destructors cannot be inherited.
