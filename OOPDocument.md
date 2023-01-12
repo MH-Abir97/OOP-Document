@@ -327,4 +327,68 @@ public class Course
 * A class (parent) contains a reference to another class (child) where both classes can exist independently.
 * A class can also include a reference of the id property of another class.
 
+# Inheritance :-
+> inheritance is another type of relationship between classes. Inheritance is a mechanism of reusing the functionalities of one class into another related class.
+
+
+![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/inheritance1.png "San Juan Mountains")
+
+> Example : Class Inheritance 
+
+class Person
+
+{
+
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+
+    public string GetFullName(){ 
+        return FirstName + " " + LastName;
+    }
+}
+
+class Employee : Person
+
+{
+
+    public int EmployeeId { get; set; }
+    public string CompanyName { get; set; }
+    
+}
+
+# Constructors :-
+
+> Creating an object of the derived class will first call the constructor of the base class and then the derived class. If there are multiple levels of inheritance then the constructor of the first base class will be called and then the second base class and so on.
+
+ > Example: Constructors in Inheritance
+
+ 
+class Person
+
+{
+
+    public Person()
+    {
+	    Console.WriteLine("Person Constructor");
+	}
+}
+
+class Employee : Person
+
+{
+
+    public Employee()
+    {
+	    Console.WriteLine("Employee Constructor");
+	}   
+}
+
+Employee emp = new Employee();
+
+
+> Output :
+* Person Constructor
+* Employee Constructor
+
+
 
