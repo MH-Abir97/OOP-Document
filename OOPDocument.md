@@ -188,3 +188,12 @@ public class Student
 
 
 }
+
+
+# There are three types of relationships in object-oriented programming based on how a class interacts with another class :- #
+
+* Association
+* Composition
+  * Composition
+  * Aggregation
+* Inheritance
