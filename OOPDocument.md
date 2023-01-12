@@ -422,3 +422,84 @@ Employee emp = new Employee();
 * A Struct can inherit from one or more interfaces. However, it cannot inherit from another struct or class.
 * An interface can inherit from one or more interfaces but cannot inherit from a class or a struct.
 * Constructors or destructors cannot be inherited.
+
+
+> # Polymorphism :
+
+Polymorphism is a Greek word that means multiple forms or shapes. You can use polymorphism if you want to have multiple forms of one or more methods of a class with the same name.
+
+> Polymorphism can be achieved in two ways :-
+
+* Compile-time Polymorphism
+* Run-time Polymorphism
+
+### Compile-time Polymorphism : -
+Compile-time polymorphism is also known as method overloading.
+
+Method Overloading :- 
+> more than one method with the same name but with different signatures. This is called method overloading.Method overloading is also known as early binding or static binding because which method to call is decided at compile time, early than the runtime.
+
+## Rules for Method Overloading:-
+* Method names should be the same but method signatures must be different. Either the number of parameters, type of parameters, or order of parameters must be different.
+* The return type of the methods does not play any role in the method overloading.
+* Optional Parameters take precedence over implicit type conversion when deciding which method definition to bind.
+
+> ## Example: Method Overloading Method Overloading
+
+class ConsolePrinter
+
+{
+
+    public void Print(string str){ 
+        Console.WriteLine(str);
+    }
+
+    public void Print(string str1, string str2){ 
+        Console.WriteLine($"{str1}, {str2}");
+    }
+
+    public void Print(string str1, string str2, string str3){ 
+        Console.WriteLine($"{str1}, {str2}, {str3}");
+    }
+}
+
+
+class ConsolePrinter
+
+{
+
+     public void Print(string str){ 
+        Console.WriteLine(str);
+    }
+
+    public void Print(string str1, string str2){ 
+        Console.WriteLine($"{str1}, {str2}");
+    }
+
+    public void Print(string str1, string str2, string str3){ 
+        Console.WriteLine($"{str1}, {str2}, {str3}");
+    }
+	
+    public void Print(int a){ 
+        Console.WriteLine($"Integer {a}");
+    }
+	
+	 public void Print(int a, string str){ 
+        Console.WriteLine($"{a}, {str}");
+    }
+
+    public void Print(string str, int a){ 
+        Console.WriteLine($"{a}, {str}");
+    }
+}
+
+
+public static void Main()
+
+{
+    
+	ConsolePrinter cp = new ConsolePrinter();
+	cp.Print("Hello World!");
+	cp.Print(1, "John");
+}
+
