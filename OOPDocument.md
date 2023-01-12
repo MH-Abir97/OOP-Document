@@ -245,4 +245,86 @@ public class StudentRepository
 ![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/association.png "San Juan Mountains")
 
 
+## Composition :
+
+* Composition is referred to as "has a" relationship. Composition relationship is formed when a class has a reference to another class as an instance property.
+
+* In the composition relationships, a class that contains the reference to another class is the parent (owner) of that child class. The child class without parent class doesn't exist.
+
+
+# Example : Composition
+
+public class Student
+
+{
+
+    public int StudentId { get; set; }
+    public string FirstName { get; set; }
+    public string MiddleName { get; set; }
+    public string LastName { get; set; }
+    public Address HomeAddress { get; set; }
+}
+
+public class Address
+
+{
+
+    public int AddressId { get; set; }
+    public string Address1 { get; set; }
+    public string Address2 { get; set; }
+    public string City { get; set; }
+    public string State { get; set; }
+    public string ZipCode { get; set; }
+    public string Country { get; set; }
+
+}
+
+
+![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/composition.png "San Juan Mountains")
+
+# Important Points:
+
+* A class (parent) contains a reference to another class (child).
+* The child class doesn't exist without the parent class.
+* Deleting the parent class will also delete the child class
+A class can also include a reference of the id property of another class.
+
+# Aggregation
+
+> Aggregation is another category of "has a" relationship where a class can contain other classes as properties but those classes can exist independently.
+
+> # Example: Aggregation
+
+public class Student
+
+{
+
+    public int StudentId { get; set; }
+    public string FirstName { get; set; }
+    public string MiddleName { get; set; }
+    public string LastName { get; set; }
+
+    public Course EnrolledCourse { get; set; }
+}
+
+public class Course
+
+{
+
+    public int CourseId { get; set; }
+    public string CourseName { get; set; }
+    public IList Topics { get; set; }
+    public DateTime StartDate { get; set; }
+    public DateTime EndDate { get; set; }
+}
+
+
+![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/aggregation.png "San Juan Mountains")
+
+# Important Points:
+
+* Aggregation is another type of composition ("has a" relation).
+* A class (parent) contains a reference to another class (child) where both classes can exist independently.
+* A class can also include a reference of the id property of another class.
+
 
