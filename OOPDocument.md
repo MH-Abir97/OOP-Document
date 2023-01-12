@@ -12,3 +12,11 @@
 * *Properties :* Properties hold the data temporarily during the execution of an application.
 * *Objects:* Objects are instances of the class that holds different data in properties/fields and can interact with other objects.
 * *Interfaces :* An interface is a contract that defines the set of rules for a particular functionality. They are used effectively with classes using OOP principles like inheritance and polymorphism to make applications more flexible.
+
+# **Object-oriented Design Principles**
+
+* Abstraction
+* Encapsulation
+* Inheritance
+* Polymorphism
+
