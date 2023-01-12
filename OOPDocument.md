@@ -497,9 +497,89 @@ class ConsolePrinter
 public static void Main()
 
 {
-    
+
 	ConsolePrinter cp = new ConsolePrinter();
 	cp.Print("Hello World!");
 	cp.Print(1, "John");
 }
+
+> # Runtime Polymorphism: Method Overriding
+
+Run-time polymorphism is also known as inheritance-based polymorphism or method overriding.
+
+Inheritance allows you to inherit a base class into a derived class and all the public members of the base class automatically become members of the derived class. However, you can redefine the base class's member in the derived class to provide a different implementation than the base class. This is called method overriding that also known as runtime polymorphism.
+
+> # Example: Method Overriding
+
+class Person
+
+{
+
+    public virtual void Greet()
+    {
+        Console.WriteLine("Hi! I am a person.");
+    }
+}
+
+class Employee : Person
+
+{
+
+    public override void Greet()
+    {
+        Console.WriteLine("Hello! I am an employee.");
+    }
+}
+
+> Runtime Polymorphism
+
+class Program
+
+{
+
+    public static void Display(Person p){ 
+        p.Greet();
+    }
+
+    public static void Main()
+    {
+        Person p1 = new Person();
+        Display(p1);
+            
+        Person p2 = new Employee();
+        Display(p2);
+            
+        Employee emp = new Employee();
+        Display(emp);
+    }
+}
+
+
+Person p1 = new Person();
+
+p1.Greet();
+
+Person p2 = new Employee();
+
+p2.Greet();
+
+Employee emp = new Employee();
+
+emp.Greet();
+
+
+
+
+> Output:
+* I am a human!
+* I am a Manager!
+* I am a Manager!
+
+
+> # Rules for Overriding:
+
+* A method, property, indexer, or event can be overridden in the derived class.
+* Static methods cannot be overridden.
+* Must use virtual keyword in the base class methods to  indicate that the methods can be overridden.
+* Must use the override keyword in the derived class to override the base class method.
 
