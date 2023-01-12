@@ -99,4 +99,27 @@ Abstraction is a higher-level concept or a way of thinking. When you start desig
 
         }
  
+*Use the virtual keyword with a member of the base class to make it overridable, and use the override keyword in the derived class to indicate that this member of the base class is being redefined in the derived class*
+
+class Person
+
+{
+    public virtual void Greet()
+
+    {
+        Console.WriteLine("Hi! I am a person.");
+    }
+}
+
+
+class Employee : Person
+
+{
+
+    public override void Greet()
+
+    {
+        Console.WriteLine("Hello! I am an employee.");
+    }
+}
 
