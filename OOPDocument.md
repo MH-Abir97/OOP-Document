@@ -49,6 +49,10 @@ Abstraction is a higher-level concept or a way of thinking. When you start desig
     public abstract void k1();
  }
 
+ 
+
+ 
+
 
  public abstract class Demo
 
@@ -64,7 +68,7 @@ Abstraction is a higher-level concept or a way of thinking. When you start desig
     }
 
     public class Sample : Demo
-    
+
     {
         public override void Show()
         {
@@ -78,5 +82,21 @@ Abstraction is a higher-level concept or a way of thinking. When you start desig
         }
     }
     
+
+     static void Main(string[] args)
+
+        {
+           
+            Sample sample = new Sample();
+            /* Call Abstract method */
+            sample.Show();
+
+           /* Call Non Abstract method */
+            sample.Print();
+           
+
+
+
+        }
  
 
