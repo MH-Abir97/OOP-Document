@@ -20,3 +20,15 @@
 * Inheritance
 * Polymorphism
 
+# Abstraction : -
+Abstraction is a higher-level concept or a way of thinking. When you start designing your application from the business requirement. Abstraction is a process of identifying essential entities (classes) and their characteristics (class members) and leaving irrelevant information from the business requirement to prepare a higher-level application design.
+
+## Types of abstraction : -
+
+ * Data Abstraction
+ * Control Abstraction
+
+ Data Abstraction : Data abstraction refers to the concealment of data specifics
+
+ Control Abstraction : control abstraction refers to the concealment of implementation details.
+
