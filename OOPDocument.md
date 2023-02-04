@@ -583,3 +583,33 @@ emp.Greet();
 * Must use virtual keyword in the base class methods to  indicate that the methods can be overridden.
 * Must use the override keyword in the derived class to override the base class method.
 
+
+## C# - Struct
+
+  In C#, struct is the value type data type that represents data structures. It can contain a parameterized constructor, static constructor, constants, fields, methods, properties, indexers, operators, events, and nested types.
+
+struct can be used to hold small data values that do not require inheritance, e.g. coordinate points, key-value pairs, and complex data structure.
+
+### In the programming language C#, structures (also known as structs) are used to define custom value types. Here are some common use cases for structs in C#:
+
+Small data structures: When you need to define a small data structure that holds a few fields, it's often more convenient to use a struct instead of a class.
+
+ছোট ডেটা স্ট্রাকচার: যখন আপনাকে একটি ছোট ডেটা স্ট্রাকচার সংজ্ঞায়িত করতে হবে যা কয়েকটি ক্ষেত্র ধারণ করে, তখন ক্লাসের পরিবর্তে একটি স্ট্রাকচার ব্যবহার করা আরও সুবিধাজনক।
+
+Performance optimization: Structs can be more efficient in certain situations compared to classes, as they have a smaller memory footprint.
+
+পারফরম্যান্স অপ্টিমাইজেশান: ক্লাসের তুলনায় নির্দিষ্ট পরিস্থিতিতে কাঠামোগুলি আরও দক্ষ হতে পারে, কারণ তাদের একটি ছোট মেমরির পদচিহ্ন রয়েছে।
+
+Immutable data structures: Structs are value types, which means that once a struct is created, its value cannot be changed. This can be useful for representing immutable data structures such as a point in 2D space.
+
+অপরিবর্তনীয় ডাটা স্ট্রাকচার: স্ট্রাকট হল ভ্যালু টাইপ, যার মানে একবার স্ট্রাকট তৈরি হয়ে গেলে এর মান পরিবর্তন করা যায় না। এটি অপরিবর্তনীয় ডেটা স্ট্রাকচার যেমন 2D স্থানের একটি বিন্দুর প্রতিনিধিত্ব করার জন্য দরকারী হতে পারে।
+
+Interoperability with unmanaged code: When you need to call into a legacy C or C++ library, you can use structs to represent the data structures used by that library.
+
+অব্যবস্থাপিত কোডের সাথে আন্তঃঅপারেবিলিটি: যখন আপনাকে একটি লিগ্যাসি C বা C++ লাইব্রেরিতে কল করতে হবে, আপনি সেই লাইব্রেরি দ্বারা ব্যবহৃত ডেটা স্ট্রাকচারগুলিকে উপস্থাপন করতে স্ট্রাকট ব্যবহার করতে পারেন।
+
+Simple data containers: Structs can be used as simple data containers that hold a few related fields, similar to records in other programming languages.
+
+সরল ডাটা কন্টেনার: স্ট্রাকটগুলিকে সাধারণ ডেটা কন্টেনার হিসাবে ব্যবহার করা যেতে পারে যেগুলি অন্যান্য প্রোগ্রামিং ভাষার রেকর্ডের মতো কয়েকটি সম্পর্কিত ক্ষেত্র ধারণ করে।
+
+These are just some examples of where structs can be useful in C#, and the specific use case will depend on your needs and requirements.
