@@ -953,3 +953,17 @@ The default value of a reference type variable is null when they are not initial
 
 A value type variable cannot be null because it holds value, not a memory address.
 
+
+> ## Diffenence between call by value and call by reference 
+
+The main difference between call by value and call by reference is that in call by value,
+1. In call by value a copy of the argument's value is passed to the function, 
+2. In call by reference, a reference to the memory location of the argument is passed to the function.
+
+3. In call by value, changes made to the function's parameter do not affect the original argument, as the function operates on a copy of the argument's value. 
+4. in call by reference, changes made to the function's parameter will affect the original argument, as the function operates on the same memory location as the argument.
+
+ 5. The choice between call by value and call by reference depends on the specific requirements of the program and the programmer's preference.
+
+
+
