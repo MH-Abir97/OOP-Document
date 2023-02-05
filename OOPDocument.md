@@ -966,4 +966,43 @@ The main difference between call by value and call by reference is that in call 
  5. The choice between call by value and call by reference depends on the specific requirements of the program and the programmer's preference.
 
 
+# C# - Interface
+
+In the human world, a contract between the two or more humans binds them to act as per the contract.
+
+* In the same way, an interface includes the declarations of related functionalities.
+* The entities that implement the interface must provide the implementation of declared functionalities.
+
+* An interface can contain declarations of methods, properties, indexers, and events. However, it cannot contain instance fields.
+
+> Example: C# Interface
+
+interface IFile 
+
+{
+
+    void ReadFile();
+    void WriteFile(string text);
+}
+
+
+1. An interface can contain declarations of methods, properties, indexers, and events.
+
+2. Default interface methods with implementation body are supported from C# 8.0.
+An interface cannot contain constructors and fields.
+3. Interface members are by default abstract and public.
+4. You cannot apply access modifiers to interface members. Although, C# 8.0 onwards, you may use private, protected, internal, public, virtual, abstract, sealed, static, extern, and partial modifiers on certain conditions.
+
+
+ > Points to Remember :
+
+1. An interface can contain declarations of methods, properties, indexers, and events.
+Default interface methods with implementation body are supported from C# 8.0.
+
+2. An interface cannot contain constructors and fields.
+
+3. Interface members are by default abstract and public.
+
+4. You cannot apply access modifiers to interface members. Although, C# 8.0 onwards, you may use private, protected, internal, public, virtual, abstract, sealed, static, extern, and partial modifiers on certain conditions.
+
 
