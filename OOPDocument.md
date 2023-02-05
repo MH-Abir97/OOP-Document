@@ -613,3 +613,170 @@ Simple data containers: Structs can be used as simple data containers that hold 
 সরল ডাটা কন্টেনার: স্ট্রাকটগুলিকে সাধারণ ডেটা কন্টেনার হিসাবে ব্যবহার করা যেতে পারে যেগুলি অন্যান্য প্রোগ্রামিং ভাষার রেকর্ডের মতো কয়েকটি সম্পর্কিত ক্ষেত্র ধারণ করে।
 
 These are just some examples of where structs can be useful in C#, and the specific use case will depend on your needs and requirements.
+
+## C# Enum
+
+In C#, an enum (or enumeration type) is used to assign constant names to a group of numeric integer values. It makes constant values more readable, for example, WeekDays.Monday is more readable then number 0 when referring to the day in a week.
+
+* If values are not assigned to enum members, then the compiler will assign integer values to each member starting with zero by default. The first member of an enum will be 0, and the value of each successive enum member is increased by 1.
+* A change in the default value of an enum member will automatically assign incremental values to the other members sequentially.
+
+* The enum can be of any numeric data type such as byte, sbyte, short, ushort, int, uint, long, or ulong. However, an enum cannot be a string type.
+
+## Deafult Enum
+enum WeekDays
+
+{
+
+    Monday,     // 0
+    
+    Tuesday,    // 1
+    Wednesday,  // 2
+    Thursday,   // 3
+    Friday,     // 4
+    Saturday,   // 5
+    Sunday      // 6
+}
+
+## Assign Values to Enum Members
+
+enum Categories
+
+{
+
+    Electronics,    // 0
+    Food,           // 1
+    Automotive = 6, // 6
+    Arts,           // 7
+    BeautyCare,     // 8
+    Fashion         // 9
+
+}
+
+## C# - StringBuilder
+C# introduced the StringBuilder in the System.Text
+* The StringBuilder doesn't create a new object in the memory but dynamically expands memory to accommodate the modified string.
+
+<br/>
+
+![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/stringbuilder-memory.png "San Juan Mountains")
+
+using System.Text; 
+
+// include at the top
+            
+StringBuilder sb = new StringBuilder();
+
+ //string will be appended later
+
+//or
+
+StringBuilder sb = new StringBuilder("Hello World!");
+
+
+* StringBuilder is mutable.
+* StringBuilder performs faster than string when appending multiple string values.
+
+* Use StringBuilder when you need to append more than three or four strings.
+
+* Use the Append() method to add or append strings to the StringBuilder object.
+
+* Use the ToString() method to retrieve a string from the StringBuilder object.
+
+##  C# - Anonymous Type
+
+ An anonymous type is a type (class) without any name that can contain public read-only properties only. 
+  It cannot contain other members, such as fields, methods, events, etc.
+
+
+  > ## Example: Anonymous Type
+
+
+
+   var student = new { 
+
+    Id = 1,
+    FirstName = "James", 
+    LastName = "Bond" 
+   };
+
+
+> ## Example: Nested Anonymous Type
+
+var student = new { 
+
+                    Id = 1, 
+                    FirstName = "James", 
+                    LastName = "Bond",
+                    Address = new {
+                         Id = 1, 
+                         City = "London",
+                          Country = "UK"
+                     }
+};
+
+> ## Example: Array of Anonymous Types
+
+var students = new[] {
+
+            new {
+                 Id = 1, 
+                 FirstName = "James",
+                  LastName = "Bond" 
+                },
+                 new {
+                     Id = 2,
+                     FirstName = "Steve",
+                     LastName = "Jobs" 
+                     },
+               new { 
+
+                  Id = 3,
+                  FirstName = "Bill",
+                  LastName = "Gates"
+                 }
+    };
+
+
+> ## Example: LINQ Query returns an Anonymous Type
+
+
+public class Student
+
+{
+
+    public int StudentID { get; set; }
+
+    public string StudentName { get; set; }
+
+    public int age { get; set; }
+
+}
+
+IList<Student> studentList = new List<Student>() { 
+
+            new Student() { 
+                StudentID = 1,
+                StudentName = "John",
+                age = 18 
+                },
+            new Student() {
+                 StudentID = 2,
+                 StudentName = "Steve",
+                 age = 21 
+                },
+         
+        };
+
+        var students = from s in studentList
+
+                       select new {
+                         Id = s.StudentID,
+                         Name = s.StudentName 
+                        };
+
+        foreach(var stud in students)
+
+        Console.WriteLine(stud.Id + "-" + stud.Name);
+
+        
