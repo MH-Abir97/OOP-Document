@@ -826,5 +826,130 @@ A dynamic type variables are defined using the dynamic keyword.
 * Static Nullable class is a helper class to compare nullable types
 
 
+## Value Type and Reference Type : 
+In C#, these data types are categorized based on how they store their value in the memory. C# includes the following categories of data types:
 
+* Value type
+* Reference type
+* Pointer type
+
+## Call By Value : 
+Call by value : When a function is called by passing the value of an argument, it is known as call by value. The value of the argument is copied into the formal parameter of the function, and changes made to the parameter inside the function have no effect on the argument.
+
+
+> The following data types are all of value type:
+
+bool
+
+byte
+
+char
+
+decimal
+
+double
+
+enum
+
+float
+
+int
+
+long
+
+sbyte
+
+short
+
+struct
+
+uint
+
+ulong
+
+ushort
+
+> Passing Value Type Variables
+
+When you pass a value-type variable from one method to another, the system creates a separate copy of a variable in another method. If value got changed in the one method, it wouldn't affect the variable in another method.
+
+> Example : Passing Value Type Variables
+
+static void ChangeValue(int x)
+
+{
+    x =  200;
+
+    Console.WriteLine(x);
+}
+
+static void Main(string[] args)
+
+{
+
+    int i = 100;
+
+    Console.WriteLine(i);
+    
+    ChangeValue(i);
+    
+    Console.WriteLine(i);
+}
+
+
+## Reference Type
+
+Call by reference: When a function is called by passing the reference of an argument, it is known as call by reference. The reference points to the same memory location as the argument and any change made to the parameter inside the function affects the argument.
+
+> Unlike value types, a reference type doesn't store its value directly. Instead, it stores the address where the value is being stored. In other words, a reference type contains a pointer to another memory location that holds the data.
+
+string s = "Hello World!!";
+
+
+![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/raference-type-memory-allocation.png "San Juan Mountains")
+
+
+## The followings are reference type data types:
+
+* String
+* Arrays (even if their elements are value types)
+* Class
+* Delegate
+
+
+## Passing Reference Type Variables
+
+When you pass a reference type variable from one method to another, it doesn't create a new copy; instead, it passes the variable's address. So, If we change the value of a variable in a method, it will also be reflected in the calling method
+
+> Example: Passing Reference Type Variable
+
+
+static void ChangeReferenceType(Student std2)
+
+{
+
+    std2.StudentName = "Steve";
+}
+
+static void Main(string[] args)
+
+{
+
+    Student std1 = new Student();
+    std1.StudentName = "Bill";
+    
+    ChangeReferenceType(std1);
+
+    Console.WriteLine(std1.StudentName);
+
+}
+
+
+## Null
+
+The default value of a reference type variable is null when they are not initialized. Null means not refering to any object.
+
+![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/null.png "San Juan Mountains")
+
+A value type variable cannot be null because it holds value, not a memory address.
 
