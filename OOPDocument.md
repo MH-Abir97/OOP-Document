@@ -1006,7 +1006,7 @@ Default interface methods with implementation body are supported from C# 8.0.
 4. You cannot apply access modifiers to interface members. Although, C# 8.0 onwards, you may use private, protected, internal, public, virtual, abstract, sealed, static, extern, and partial modifiers on certain conditions.
 
 
-> ## what is Kestrel?
+> ## What is Kestrel?
 
 Kestrel is a cross-platform web server for ASP.NET Core applications. It is included in the ASP.NET Core runtime and can be used to host ASP.NET Core applications on any operating system that supports .NET Core.
 
@@ -1017,5 +1017,17 @@ In addition to serving ASP.NET Core applications, Kestrel can also act as a reve
 Kestrel provides a simple and flexible architecture, making it easy for developers to customize and extend the server to meet their specific needs. With its support for modern web standards, high performance, and ease of use, Kestrel has become a popular choice for building and deploying ASP.NET Core applications.
 
 
+> ## What is reverse proxy?
 
+A reverse proxy is a server that sits between client devices and a web server, forwarding client requests to the web server and returning the server's responses back to the clients. The reverse proxy acts as an intermediary between the clients and the web server, allowing the client devices to interact with the web server as if they were communicating directly.
+
+Reverse proxies are commonly used for several purposes:
+
+1. Load balancing: A reverse proxy can distribute incoming client requests across multiple web servers, providing improved performance and scalability for high-traffic web applications.
+
+2. Security: A reverse proxy can act as a security barrier between client devices and a web server, providing an additional layer of protection against attacks such as DDoS, SQL injection, and cross-site scripting.
+
+3. Content caching: A reverse proxy can cache frequently-requested content, reducing the load on the web server and improving the performance and scalability of the application.
+
+4. SSL offloading: A reverse proxy can handle SSL/TLS encryption and decryption, allowing the web server to focus on serving content, and improving the performance of the application.
 
