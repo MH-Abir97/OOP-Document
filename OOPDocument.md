@@ -1006,3 +1006,16 @@ Default interface methods with implementation body are supported from C# 8.0.
 4. You cannot apply access modifiers to interface members. Although, C# 8.0 onwards, you may use private, protected, internal, public, virtual, abstract, sealed, static, extern, and partial modifiers on certain conditions.
 
 
+> ## what is Kestrel?
+
+Kestrel is a cross-platform web server for ASP.NET Core applications. It is included in the ASP.NET Core runtime and can be used to host ASP.NET Core applications on any operating system that supports .NET Core.
+
+Kestrel is designed to be fast, lightweight, and efficient, and is capable of handling high-performance and high-traffic web applications. It is particularly well-suited for use in cloud-based and containerized deployment scenarios.
+
+In addition to serving ASP.NET Core applications, Kestrel can also act as a reverse proxy, allowing it to work in conjunction with other web servers, such as IIS or Nginx, to provide a secure and scalable deployment for ASP.NET Core applications.
+
+Kestrel provides a simple and flexible architecture, making it easy for developers to customize and extend the server to meet their specific needs. With its support for modern web standards, high performance, and ease of use, Kestrel has become a popular choice for building and deploying ASP.NET Core applications.
+
+
+
+
