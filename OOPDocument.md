@@ -199,12 +199,16 @@ public class Student
 * Inheritance
 
 # Association :
+>  Association is a relationship in which two or more classes are associated with each other in terms of their functionality and behavior. In Code First approach,      association can be implemented using the HasOptional(), HasRequired(), and HasMany() methods.
+
 * Association relationship is referred to as "uses a" relationship where a class uses another class to perform some operation
 * Association happens between the classes where one class provides a service to another class or the class delegates some kinds of behaviors to another class.
 
 * Association is typically implemented with a pointer or reference instance variable or as a method argument.
 
 ## Example : Association
+
+
 
 public class Student
 
@@ -240,6 +244,26 @@ public class StudentRepository
 
         return true;
     }
+}
+
+In Code First approach, association can be implemented using the HasOptional(), HasRequired(), and HasMany() methods.
+public class Student
+{
+    public int StudentId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection<Course> Courses { get; set; }
+}
+
+public class Course
+{
+    public int CourseId { get; set; }
+    public string Title { get; set; }
+    public virtual ICollection<Student> Students { get; set; }
+    
+    // Fluent API
+    modelBuilder.Entity<Student>()
+        .HasMany
+
 }
 
 ![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/association.png "San Juan Mountains")
