@@ -246,15 +246,21 @@ public class StudentRepository
     }
 }
 
-In Code First approach, association can be implemented using the HasOptional(), HasRequired(), and HasMany() methods.
+> In Code First approach, association can be implemented using the HasOptional(), HasRequired(), and HasMany() methods.
+
 public class Student
+
 {
+
     public int StudentId { get; set; }
     public string Name { get; set; }
     public virtual ICollection<Course> Courses { get; set; }
+    
 }
 
+
 public class Course
+
 {
     public int CourseId { get; set; }
     public string Title { get; set; }
@@ -264,13 +270,15 @@ public class Course
     modelBuilder.Entity<Student>()
         .HasMany
 
+	
 }
+	
 
 ![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/association.png "San Juan Mountains")
 
 
 ## Composition :
-
+> Composition is a relationship in which a class is composed of one or more instances of other classes, and those instances cannot exist independently of the class that composes them. In Code First approach, composition can be implemented using the Owned() method.
 * Composition is referred to as "has a" relationship. Composition relationship is formed when a class has a reference to another class as an instance property.
 
 * In the composition relationships, a class that contains the reference to another class is the parent (owner) of that child class. The child class without parent class doesn't exist.
@@ -302,8 +310,34 @@ public class Address
     public string Country { get; set; }
 
 }
+	
+> In Code First approach, composition can be implemented using the Owned() method.
+	
+public class Address
+	
+{
+	
+    public string Street { get; set; }
+    public string City { get; set; }
+    public string State { get; set; }
+    public string Zip { get; set; }
+	
+}
 
-
+public class Person
+	
+{
+	
+    public int PersonId { get; set; }
+    public string Name { get; set; }
+    public Address Address { get; set; }
+    
+    // Fluent API
+    modelBuilder.Entity<Person>()
+        .OwnsOne(p => p.Address);
+	
+}
+	
 ![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/composition.png "San Juan Mountains")
 
 # Important Points:
@@ -315,7 +349,9 @@ A class can also include a reference of the id property of another class.
 
 # Aggregation
 
-> Aggregation is another category of "has a" relationship where a class can contain other classes as properties but those classes can exist independently.
+ > Aggregation is a relationship in which a class is composed of one or more instances of other classes, but those instances can exist independently of the class that  aggregates them. In Code First approach, aggregation can be implemented using the HasMany() and WithOne() methods.
+	
+Aggregation is another category of "has a" relationship where a class can contain other classes as properties but those classes can exist independently.
 
 > # Example: Aggregation
 
@@ -341,6 +377,33 @@ public class Course
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
 }
+	
+public class Department
+	
+{
+	
+    public int DepartmentId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection<Employee> Employees { get; set; }
+	
+}
+
+public class Employee
+	
+{
+	
+    public int EmployeeId { get; set; }
+    public string Name { get; set; }
+    public int DepartmentId { get; set; }
+    public virtual Department Department { get; set; }
+    
+    // Fluent API
+    modelBuilder.Entity<Employee>()
+        .HasOne(e => e.Department)
+        .WithMany(d => d.Employees)
+        .HasForeignKey(e => e.DepartmentId);
+	
+}
 
 
 ![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/aggregation.png "San Juan Mountains")
@@ -357,6 +420,15 @@ public class Course
 
 ![The San Juan Mountains are beautiful!](https://www.tutorialsteacher.com/Content/images/csharp/inheritance1.png "San Juan Mountains")
 
+	
+## Which  best  OOP Relationship in Code First approach in C#	
+> There is no one "best" OOP relationship in Code First approach in C#. The choice of which relationship to use depends on the specific requirements and constraints of the application being developed. Each type of relationship (inheritance, composition, aggregation, and association) has its own strengths and weaknesses, and the decision to use one over the other should be based on factors such as the nature of the objects being modeled, the complexity of the application, and the performance considerations.
+
+For example, inheritance is a powerful tool for modeling hierarchical relationships between classes, but it can lead to complex class hierarchies that are difficult to maintain. Composition is useful for creating reusable and modular classes, but it can also result in tightly coupled code. Aggregation is useful for modeling relationships between objects that have a lifecycle of their own, but it can also lead to issues with cascading deletes. Association is useful for modeling relationships between objects that are loosely coupled, but it can be less efficient than other types of relationships.
+
+Ultimately, the best OOP relationship to use in Code First approach in C# is the one that best fits the specific needs of the application being developed.
+	
+	
 > Example : Class Inheritance 
 
 class Person
