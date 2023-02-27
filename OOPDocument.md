@@ -523,6 +523,50 @@ Employee emp = new Employee();
 > In C#, a struct is a value type, and a class is a reference type. Inheritance is a mechanism that allows a class to inherit the members of another class, and extend or modify its behavior.However, a struct cannot inherit from a class, and a class cannot inherit from a struct. This is because structs and classes have different memory allocation models, and the inheritance mechanism is designed to work with reference types.In C#, you can achieve similar functionality to inheritance with structs by using interfaces, which define a set of members that a struct or a class must implement. A struct can implement one or more interfaces to inherit the members of those interfaces.
 
 Here's an example of how you can use interfaces to achieve similar functionality to inheritance with structs:
+	
+public interface IShape
+{
+	
+    void Draw();
+	
+}
+
+public struct Point : IShape
+	
+{
+	
+    public int X { get; set; }
+    public int Y { get; set; }
+
+    public Point(int x, int y)
+    {
+	
+        X = x;
+        Y = y;
+	
+    }
+
+    public void Draw()
+    {
+	
+        Console.WriteLine("Drawing point at ({0}, {1})", X, Y);
+	
+    }
+}
+
+public class Program
+{
+	
+    static void Main(string[] args)
+    {
+	
+        IShape shape = new Point(10, 20);
+        shape.Draw();
+	
+    }
+	
+}
+
 > # Polymorphism :
 
 Polymorphism is a Greek word that means multiple forms or shapes. You can use polymorphism if you want to have multiple forms of one or more methods of a class with the same name.
